@@ -8,7 +8,7 @@ body {
 }
 
 /* Navbar */
-.navbar {
+/* .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,7 +60,7 @@ body {
 
 .signup-btn {
     background: red;
-}
+} */
 
 /* Hero Section */
 .hero {
