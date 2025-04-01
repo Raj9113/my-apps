@@ -3,41 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esports Org</title>
-    <link rel="stylesheet" href="output.css">
+    <title>Portfolio Website</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        .social-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: block;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .username {
+            color: #fff;
+            text-align: center;
+            margin: 15px 0 5px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .name {
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .stats div {
+            flex: 1;
+        }
+
+        .stats span {
+            display: block;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .about {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: center;
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-white">
-
-    <!-- Navbar -->
-    <nav class="flex items-center justify-between">
-        <div class="">
-            <a href="index.html">
-                <img src="logo.png" alt="Esports Logo"> 
-                <span>Esports Org</span>
-            </a>
+<body>
+    <div class="container">
+        <div class="social-card">
+            <img src="https://via.placeholder.com/100" alt="Profile" class="profile-img">
+            <h2 class="username">@CreativeMind</h2>
+            <h3 class="name">John Doe</h3>
+            <div class="stats">
+                <div>
+                    <span>1.5K</span>
+                    Followers
+                </div>
+                <div>
+                    <span>230</span>
+                    Posts
+                </div>
+            </div>
+            <p class="about">
+                Passionate designer and developer creating beautiful digital experiences. 
+                Lover of coffee and clean code.
+            </p>
         </div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-        </ul>
-        <div class="auth-buttons">
-            <a href="login.html" class="login-btn">Login</a>
-            <a href="signup.html" class="signup-btn">Sign Up</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <h1>Welcome to the Ultimate Esports Experience</h1>
-        <p>Compete, Connect, and Conquer</p>
-    </header>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Esports Org. All rights reserved.</p>
-    </footer>
-<script src="script.js"></script>
+    </div>
 </body>
 </html>
