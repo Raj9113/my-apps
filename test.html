@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gradient Background with Blue Cursor</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: linear-gradient(135deg, orange 40%, white 100%);
+      cursor: none; /* Hide default cursor */
+    }
+
+    /* Blue follower circle */
+    .cursor-follower {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background-color: rgba(0, 123, 255, 0.8); /* Blue */
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.05s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<script>
+  const follower = document.getElementById('cursorFollower');
+
+  document.addEventListener('mousemove', (e) => {
+    follower.style.left = `${e.clientX}px`;
+    follower.style.top = `${e.clientY}px`;
+  });
+</script>
+
+</body>
+</html>
