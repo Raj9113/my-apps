@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Gradient Background with Blue Cursor</title>
+  <title>Test Web</title>
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      background: linear-gradient(135deg, orange 40%, white 100%);
-      cursor: none; /* Hide default cursor */
+      background-image: url('../assets/desk-bg.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      /* text-shadow: rgb(141, 227, 219); */
     }
 
-    /* Blue follower circle */
-    .cursor-follower {
+    nav {
+      opacity: 0.85;
+      width: 100%;
+      height: 60px;
       position: fixed;
-      width: 20px;
-      height: 20px;
-      background-color: rgba(0, 123, 255, 0.8); /* Blue */
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: transform 0.05s ease-out;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* padding: 20px; */
+      background-color: black;
+      color: white;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
     }
   </style>
 </head>
+
 <body>
-
-<div class="cursor-follower" id="cursorFollower"></div>
-
-<script>
-  const follower = document.getElementById('cursorFollower');
-
-  document.addEventListener('mousemove', (e) => {
-    follower.style.left = `${e.clientX}px`;
-    follower.style.top = `${e.clientY}px`;
-  });
-</script>
+  <nav>
+    <div class="left">
+      <img src="../assets/logo.png" alt="Logo" style="width: 40px; margin-left: 15px;">
+      <h3>Silent Killer</h3>
+    </div>
+    <div></div>
+    <div></div>
+  </nav>
 
 </body>
+
 </html>
