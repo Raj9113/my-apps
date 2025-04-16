@@ -28,24 +28,10 @@ nav {
   margin-left: 20px;
 }
 
-img {
-  width: 120px;
-  height: 120px;
+.nav-logo {
+  width: 93px;
   margin-left: 1px;
   margin-top: 1px;
-}
-
-.img-container {
-  margin-top: 18px;
-  width: 80px;
-  height: 80px;
-  background-color: black;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  position: absolute;
 }
 
 h3 {
