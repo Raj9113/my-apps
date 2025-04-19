@@ -80,4 +80,7 @@ body {
     .menu-icon {
       display: block;
     }
+    .navbar{
+        padding: 5px;
+    }
   }
