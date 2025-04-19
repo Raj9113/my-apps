@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silent Killer eSports</title>
-    <link rel="icon" href="../assets/tab-logo.svg" sizes="16x16" type="image/png" />
-    <link rel="icon" href="../assets/tab-logo.svg" sizes="32x32" type="image/png" />
-    <link rel="icon" href="../assets/tab-logo.svg" sizes="64x64" type="image/png" />
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Orbitron:wght@400..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="output.css">
-</head>
+      href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
 
-<body>
-    <nav>
-        <div class="left">
-            <img class="h-9" src="../assets/logo.png" alt="Logo">
-            <h3 class="">Silent Killer</h3>
-        </div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#home">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-            <a href="#gallery">Gallery</a>
-        </div>
-        <div>
-            <a class="join-btn" href="https://discord.gg/pmqwK54DvP" target="_blank">Join Us</a>
-        </div>
+    <link
+      rel="icon"
+      href="../assets/tab-logo.svg"
+      sizes="64x64"
+      type="image/png"
+    />
+    <title>Silent Killer eSports</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="../assets/logo.png" alt="logo" />
+        <div class="logo">Silent Killer</div>
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="buttons">
+        <button>Login</button>
+        <button>Sign Up</button>
+      </div>
+
+      <button class="menu-icon" onclick="toggleMenu()">☰</button>
     </nav>
-</body>
 
+    <script>
+      function toggleMenu() {
+        var navLinks = document.getElementById("navLinks");
+        if (navLinks.style.display === "block") {
+          navLinks.style.display = "none";
+        } else {
+          navLinks.style.display = "block";
+        }
+      }
+    </script>
+  </body>
 </html>
