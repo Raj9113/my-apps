@@ -9,13 +9,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 8px;
   background: #85e8dc;
 }
 
 .navbar img {
   width: 50px;
-  height: 50px;
 }
 
 .nav-links {
@@ -49,6 +48,7 @@ body {
   border: none;
   font-size: 24px;
   color: white;
+  margin-right: -5px;
 }
 
 .buttons a {
@@ -76,10 +76,17 @@ body {
 
   .buttons {
     position: absolute;
-    right: 50px;
+    right: 40px;
 
   }
 
+  .nav-left img{
+    margin-top: 15px;
+    position: absolute;
+    width: 70px;
+    margin-left: 10px;
+
+  }
   .nav-links a {
     color: #85e8dc;
     display: block;
@@ -91,6 +98,9 @@ body {
   }
 
   .navbar {
-    padding: 5px;
+    padding: 10px;
+  }
+  .name {
+    display: none;
   }
 }
