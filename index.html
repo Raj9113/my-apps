@@ -22,7 +22,7 @@
         <img src="../assets/logo.png" alt="logo" />
         <div class="name">Silent Killer</div>
       </div>
-
+  
       <div class="nav-links" id="navLinks">
         <a href="#">Home</a>
         <a href="#">About</a>
@@ -30,60 +30,177 @@
         <a href="#">Partners</a>
         <a href="#">Contact Us</a>
       </div>
-
+  
       <div class="buttons">
         <a href="https://discord.gg/pmqwK54DvP" target="_blank">Join Us</a>
       </div>
-
+  
       <button class="menu-icon" onclick="toggleMenu()">☰</button>
     </nav>
+    <!-- Navigation Arrows -->
+    <div class="slider-nav">
+      <button class="prev" onclick="prevSlide()">&#10094;</button>
+      <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+  
+    <!-- Timer Circle -->
+    <div class="progress-container">
+      <svg class="progress-ring" viewBox="0 0 100 100" width="var(--ring-size)" height="var(--ring-size)">
+        <circle class="progress-ring-circle" stroke="#f2ff02" stroke-width="var(--ring-stroke)" fill="transparent" r="45"
+          cx="50" cy="50" />
+      </svg>
+  
+    </div>
+  
     <div class="hero-slider">
       <div class="slide active" style="background-image: url('../assets/hero1.jpg')">
-        <div class="skewed-box">
-          <h1>First Hero Text</h1>
+        <div>
+          <div class="Tag"><b>SILENT</b> KILLER</div>
+          <div class="Tag-Discreption">Future Of gaming</div>
         </div>
+        <div class="skewed-box">
+          <div class="content image">Silent Killer Esports is a competitive gaming team known for strategy, precision, and
+            teamwork. We dominate tournaments with skill, passion, and an unshakable drive to win.</div>
+        </div>
+        <a href="https://discord.gg/pmqwK54DvP" target="_blank" class="c-btn">Continue</a>
       </div>
       <div class="slide" style="background-image: url('../assets/hero2.jpg')">
-        <div class="skewed-box">
-          <h1>Second Hero Text</h1>
+        <div>
+          <div class="Tag"><b>SILENT</b> KILLER</div>
+          <div class="Tag-Discreption">Future Of gaming</div>
         </div>
+        <div class="skewed-box">
+          <div class="content image">Silent Killer Esports is a competitive gaming team known for strategy, precision, and
+            teamwork. We dominate tournaments with skill, passion, and an unshakable drive to win.</div>
+        </div>
+        <a href="https://discord.gg/pmqwK54DvP" target="_blank" class="c-btn">Continue</a>
       </div>
       <div class="slide" style="background-image: url('../assets/hero3.jpg')">
-        <div class="skewed-box">
-          <h1>Third Hero Text</h1>
+        <div>
+          <div class="Tag"><b>SILENT</b> KILLER</div>
+          <div class="Tag-Discreption">Future Of gaming</div>
         </div>
+        <div class="skewed-box">
+          <div class="content image">Silent Killer Esports is a competitive gaming team known for strategy, precision, and
+            teamwork. We dominate tournaments with skill, passion, and an unshakable drive to win.</div>
+        </div>
+        <a href="https://discord.gg/pmqwK54DvP" target="_blank" class="c-btn">Continue</a>
       </div>
       <div class="slide" style="background-image: url('../assets/hero4.jpg')">
-        <div class="skewed-box">
-          <h1>Fourth Hero Text</h1>
+        <div>
+          <div class="Tag"><b>SILENT</b> KILLER</div>
+          <div class="Tag-Discreption">Future Of gaming</div>
         </div>
+        <div class="skewed-box">
+          <div class="content image">Silent Killer Esports is a competitive gaming team known for strategy, precision, and
+            teamwork. We dominate tournaments with skill, passion, and an unshakable drive to win.</div>
+        </div>
+        <a href="https://discord.gg/pmqwK54DvP" target="_blank" class="c-btn">Continue</a>
       </div>
       <div class="slide" style="background-image: url('../assets/hero5.jpg')">
-        <div class="skewed-box">
-          <h1>Fifth Hero Text</h1>
+        <div>
+          <div class="Tag"><b>SILENT</b> KILLER</div>
+          <div class="Tag-Discreption">Future Of gaming</div>
         </div>
+        <div class="skewed-box">
+          <div class="content image">Silent Killer Esports is a competitive gaming team known for strategy, precision, and
+            teamwork. We dominate tournaments with skill, passion, and an unshakable drive to win.</div>
+        </div>
+        <a href="https://discord.gg/pmqwK54DvP" target="_blank" class="c-btn">Continue</a>
       </div>
     </div>
-
-    <script>
-      function toggleMenu() {
-        var navLinks = document.getElementById("navLinks");
-        if (navLinks.style.display === "block") {
-          navLinks.style.display = "none";
-        } else {
-          navLinks.style.display = "block";
+  
+      <script>
+        function toggleMenu() {
+          var navLinks = document.getElementById("navLinks");
+          if (navLinks.style.display === "block") {
+            navLinks.style.display = "none";
+          } else {
+            navLinks.style.display = "block";
+          }
         }
-      }
-      const slides = document.querySelectorAll(".slide");
-      let current = 0;
-
-      function showNextSlide() {
-        slides[current].classList.remove("active");
-        current = (current + 1) % slides.length;
-        slides[current].classList.add("active");
-      }
-
-      setInterval(showNextSlide, 8000); // change image every 4 seconds
-    </script>
+  
+        const slides = document.querySelectorAll(".slide");
+        let current = 0;
+        const intervalTime = 8000;
+        let interval, progressAnimation;
+  
+        // Progress ring setup
+        const circle = document.querySelector(".progress-ring-circle");
+        const radius = circle.r.baseVal.value;
+        const circumference = 2 * Math.PI * radius;
+        circle.style.strokeDasharray = `${circumference}`;
+        circle.style.strokeDashoffset = `${circumference}`;
+  
+        function setProgress(percent) {
+          const offset = circumference - percent * circumference;
+          circle.style.strokeDashoffset = offset;
+        }
+  
+        function animateProgress(duration) {
+          let start = null;
+          cancelAnimationFrame(progressAnimation);
+  
+          function step(timestamp) {
+            if (!start) start = timestamp;
+            const progress = (timestamp - start) / duration;
+            setProgress(Math.min(progress, 1));
+            if (progress < 1) {
+              progressAnimation = requestAnimationFrame(step);
+            }
+          }
+  
+          progressAnimation = requestAnimationFrame(step);
+        }
+  
+        function showSlide(index) {
+          slides[current].classList.remove("active");
+          current = (index + slides.length) % slides.length;
+          slides[current].classList.add("active");
+          typeText(slides[current].querySelector(".content"));
+          animateProgress(intervalTime);
+        }
+  
+        function nextSlide() {
+          showSlide(current + 1);
+          restartTimer();
+        }
+  
+        function prevSlide() {
+          showSlide(current - 1);
+          restartTimer();
+        }
+  
+        function restartTimer() {
+          clearInterval(interval);
+          interval = setInterval(nextSlide, intervalTime);
+        }
+  
+        function typeText(element) {
+          const fullText = element.dataset.text || element.textContent;
+          element.dataset.text = fullText;
+          element.innerHTML = "";
+  
+          let i = 0;
+          const typing = setInterval(() => {
+            if (i < fullText.length) {
+              const char = fullText[i] === " " ? "&nbsp;" : fullText[i];
+              element.innerHTML += char;
+              i++;
+            } else {
+              clearInterval(typing);
+            }
+          }, 20);
+        }
+  
+        // Initialize first slide
+        window.onload = () => {
+          typeText(slides[0].querySelector(".content"));
+          animateProgress(intervalTime);
+          interval = setInterval(nextSlide, intervalTime);
+        };
+      </script>
+  
   </body>
-</html>
+  
+  </html>
