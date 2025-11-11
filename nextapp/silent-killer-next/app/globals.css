@@ -1,0 +1,32 @@
+:root {
+  --ring-size: 80px;    /* Progress ring size */
+  --ring-stroke: 4;     /* Ring thickness */
+}
+
+body {
+  margin: 0;
+  font-family: 'Goldman', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+}
