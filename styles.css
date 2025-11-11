@@ -96,8 +96,8 @@ body {
   z-index: 1;
 }
 
-.skewed-box {
-  /* max-width: 60%;
+/* .skewed-box {
+  max-width: 60%;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   padding: 20px 40px;
@@ -106,9 +106,9 @@ body {
   transform: skewX(-20deg);
   display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
 
-}
+} */
 
 .content {
   transform: skewX(20deg);
